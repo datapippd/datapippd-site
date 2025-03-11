@@ -32,17 +32,19 @@
             position: relative;
         }
 
-        .logo-container {
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a73e8;
+            background: linear-gradient(90deg, #1a73e8, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
 
-        .logo-container:hover {
+        .logo:hover {
             transform: scale(1.05);
-        }
-
-        .logo {
-            max-width: 250px; /* Adjust size as needed */
-            height: auto;
         }
 
         h1 {
@@ -220,16 +222,14 @@
             }
 
             .logo {
-                max-width: 200px; /* Smaller logo on mobile */
+                font-size: 24px;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo-container">
-            <img src="datapip-logo.png" alt="DataPipPD Logo" class="logo">
-        </div>
+        <div class="logo">DataPipPD</div>
     </header>
 
     <h1>Welcome to DataPipPD</h1>
