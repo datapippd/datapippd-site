@@ -3,115 +3,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DatapipPD</title>
+    <meta name="description" content="DataPipPD - Structured Data Solutions for Businesses">
+    <title>DataPipPD - Structured Data Solutions</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap">
     <style>
-        body {
+        /* Reset default styles and set global properties */
+        * {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
-            background: #ffffff; /* White background */
-            text-align: center;
-            color: #333;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
-        .container {
+
+        body {
+            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+            color: #2d3748;
+            line-height: 1.8;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        /* Header styling */
+        header {
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 30px 0;
+            position: relative;
         }
-        .logo img {
-            max-width: 200px;
+
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a73e8;
+            background: linear-gradient(90deg, #1a73e8, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
         }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
         h1 {
-            font-size: 2.5em;
-            margin: 20px 0;
-        }
-        p {
-            font-size: 1.2em;
-            max-width: 600px;
-        }
-        .about-section, .mission-section {
-            max-width: 800px;
-            margin: 40px auto;
+            font-size: 48px;
             text-align: center;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 30px 0;
+            color: #1a202c;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #1a73e8, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeIn 1.5s ease-in-out;
         }
+
+        /* Section styling */
+        section {
+            max-width: 900px;
+            margin: 30px auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
         h2 {
-            color: #007BFF;
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #1a73e8;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
         }
-        .contact-form {
-            margin-top: 20px;
+
+        h2::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(90deg, #1a73e8, #34d399);
+            bottom: -5px;
+            left: 0;
+            border-radius: 3px;
         }
-        input, textarea, button {
-            width: 100%;
-            max-width: 400px;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
+
+        p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #4a5568;
+        }
+
+        .highlight {
+            color: #d32f2f;
+            font-weight: 600;
+            background: rgba(211, 47, 47, 0.1);
+            padding: 2px 6px;
             border-radius: 5px;
-            font-size: 1em;
         }
-        button {
-            background: #007BFF;
+
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        ul li {
+            font-size: 15px;
+            color: #2d3748;
+            background: #e6f0fa;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        ul li:hover {
+            background: #1a73e8;
             color: #fff;
-            cursor: pointer;
-            border: none;
+            transform: scale(1.05);
         }
+
+        ul li::before {
+            content: "✦";
+            color: #34d399;
+            margin-right: 8px;
+        }
+
+        /* Contact form styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        label {
+            font-size: 14px;
+            color: #2d3748;
+            font-weight: 500;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 15px;
+            background: #f7fafc;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #1a73e8;
+            box-shadow: 0 0 8px rgba(26, 115, 232, 0.2);
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 120px;
+        }
+
+        button {
+            background: linear-gradient(90deg, #1a73e8, #34d399);
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
         button:hover {
-            background: #0056b3;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(26, 115, 232, 0.3);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        section {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            section {
+                padding: 20px;
+            }
+
+            ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .logo {
+                font-size: 24px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo">
-            <img src="Datapip.jpg" alt="DatapipPD Logo">
-        </div>
-        <h1>Welcome to DatapipPD</h1>
-        <div class="about-section">
-            <h2>About DatapipPD</h2>
-            <p>
-                🚀 <strong>DatapipPD is the next evolution in structured data solutions.</strong> 
-                We help businesses <strong>ingest, transform, and manage their data efficiently</strong>, 
-                ensuring governance, automation, and seamless integration with existing systems. 
-            </p>
-            <p>
-                Our goal is to <strong>eliminate data silos</strong>, making structured, high-quality 
-                data accessible for <strong>analytics, automation, and operational intelligence.</strong>
-            </p>
-            <ul>
-                🔹 Designed for Enterprises & Startups</li>
-                🔹 Seamless API & BI Integration</li>
-                🔹 Future-proof Data Structuring</li>
-            </ul>
-        </div>
+    <header>
+        <div class="logo">DataPipPD</div>
+    </header>
 
-        <div class="mission-section">
-            <h2>Our Mission</h2>
-            <p>
-                📌 <strong>“To empower businesses with structured, actionable data—eliminating inefficiencies and 
-                unlocking innovation through intelligent automation.”</strong>
-            </p>
-            <p>
-                We believe that <strong>data should work for you, not against you.</strong> 
-                DatapipPD simplifies complex data challenges, ensuring every business has 
-                <strong>the right data, at the right time, in the right format.</strong>
-            </p>
-        </div>
+    <h1>Welcome to DataPipPD</h1>
 
-        <div class="contact-form">
-            <h2>Contact Us</h2>
-            <form action="https://formspree.io/f/mgvaeznd" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </div>
+    <section id="about">
+        <h2>About DataPipPD</h2>
+        <p><span class="highlight">DataPipPD</span> is the next evolution in structured data solutions. We help businesses ingest, transform, and manage their data efficiently, ensuring governance, automation, and seamless integration with existing systems.</p>
+        <p>Our goal is to eliminate data silos, making structured, high-quality data accessible for analytics, automation, and operational intelligence.</p>
+        <ul>
+            <li>Designed for Enterprises & Startups</li>
+            <li>Seamless API & BI Integration</li>
+            <li>Future-proof Data Structuring</li>
+        </ul>
+    </section>
+
+    <section id="mission">
+        <h2>Our Mission</h2>
+        <p><span class="highlight">"To empower businesses with structured, actionable data—eliminating inefficiencies and unlocking innovation through intelligent automation."</span></p>
+        <p>We believe that data should work for you, not against you. DataPipPD simplifies complex data challenges, ensuring every business has the right data, at the right time, in the right format.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" value="asd" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" value="pkoyd@gmail.com" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required>hi</textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
 </body>
 </html>
