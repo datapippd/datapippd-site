@@ -1,3 +1,19 @@
+I assume you meant "smart placeholder" rather than "smart holder." A placeholder is a hint text that appears inside an input field to guide the user, and it can make the form look cleaner and more intuitive. Since you requested removing the name, email, and message labels and replacing them with placeholders, I’ll update the form to use placeholders instead of labels. This will streamline the design while keeping it user-friendly.
+
+I’ll also remove the pre-filled values (value="asd", value="pkoyd@gmail.com", and value="hi") to ensure the form starts empty, encouraging fresh input. The placeholders will provide clear guidance (e.g., "Your Name," "Your Email," "Your Message"), and I’ll enhance the form’s styling to ensure the placeholders are visually appealing and functional.
+
+Here’s the updated code with placeholders instead of labels and no pre-filled values:
+
+Updated Code with Placeholders
+html
+
+Preview
+
+Collapse
+
+Wrap
+
+Copy
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,19 +48,17 @@
             position: relative;
         }
 
-        .logo {
-            font-size: 32px;
-            font-weight: 700;
-            color: #1a73e8;
-            background: linear-gradient(90deg, #1a73e8, #34d399);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        .logo-container {
             transition: transform 0.3s ease;
         }
 
-        .logo:hover {
+        .logo-container:hover {
             transform: scale(1.05);
+        }
+
+        .logo {
+            max-width: 250px; /* Adjust size as needed */
+            height: auto;
         }
 
         h1 {
@@ -150,12 +164,6 @@
             margin: 0 auto;
         }
 
-        label {
-            font-size: 14px;
-            color: #2d3748;
-            font-weight: 500;
-        }
-
         input, textarea {
             width: 100%;
             padding: 12px;
@@ -164,12 +172,19 @@
             font-size: 15px;
             background: #f7fafc;
             transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            placeholder-color: #718096; /* Custom property for placeholder color */
         }
 
         input:focus, textarea:focus {
             border-color: #1a73e8;
             box-shadow: 0 0 8px rgba(26, 115, 232, 0.2);
             outline: none;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: #718096;
+            font-weight: 400;
+            opacity: 1; /* Ensure placeholder is fully visible */
         }
 
         textarea {
@@ -222,14 +237,16 @@
             }
 
             .logo {
-                font-size: 24px;
+                max-width: 200px; /* Smaller logo on mobile */
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo">DataPipPD</div>
+        <div class="logo-container">
+            <img src="datapip-logo.png" alt="DataPipPD Logo" class="logo">
+        </div>
     </header>
 
     <h1>Welcome to DataPipPD</h1>
@@ -254,15 +271,9 @@
     <section id="contact">
         <h2>Contact Us</h2>
         <form>
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" value="Your Name" required>
-
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" value="Your email" required>
-
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required>Message</textarea>
-
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
             <button type="submit">Send Message</button>
         </form>
     </section>
