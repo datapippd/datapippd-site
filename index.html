@@ -33,18 +33,30 @@
         }
 
         .logo-container {
-            transition: transform 0.3s ease, filter 0.3s ease;
+            transition: transform 0.3s ease;
         }
 
         .logo-container:hover {
             transform: scale(1.05);
-            filter: brightness(1.1); /* Slight brighten effect on hover */
         }
 
         .logo {
-            max-width: 250px; /* Adjust based on logo aspect ratio */
+            max-width: 250px; /* Adjust size as needed */
             height: auto;
-            transition: transform 0.3s ease;
+        }
+
+        h1 {
+            font-size: 48px;
+            text-align: center;
+            margin: 30px 0;
+            color: #1a202c;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #1a73e8, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
         /* Section styling */
@@ -62,20 +74,6 @@
         section:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        h1 {
-            font-size: 48px;
-            text-align: center;
-            margin: 30px 0;
-            color: #1a202c;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            background: linear-gradient(90deg, #1a73e8, #34d399);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: fadeIn 1.5s ease-in-out;
         }
 
         h2 {
@@ -150,6 +148,12 @@
             margin: 0 auto;
         }
 
+        label {
+            font-size: 14px;
+            color: #2d3748;
+            font-weight: 500;
+        }
+
         input, textarea {
             width: 100%;
             padding: 12px;
@@ -164,12 +168,6 @@
             border-color: #1a73e8;
             box-shadow: 0 0 8px rgba(26, 115, 232, 0.2);
             outline: none;
-        }
-
-        input::placeholder, textarea::placeholder {
-            color: #718096;
-            font-weight: 400;
-            opacity: 1;
         }
 
         textarea {
@@ -256,9 +254,15 @@
     <section id="contact">
         <h2>Contact Us</h2>
         <form>
-            <input type="text" id="name" name="name" placeholder="Your Name" required>
-            <input type="email" id="email" name="email" placeholder="Your Email" required>
-            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" value="asd" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" value="pkoyd@gmail.com" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required>hi</textarea>
+
             <button type="submit">Send Message</button>
         </form>
     </section>
