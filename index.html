@@ -9,8 +9,7 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background: url('datapipbackground.png') no-repeat center center fixed;
-            background-size: cover;
+            background: #ffffff; /* White background */
             text-align: center;
             color: #333;
         }
@@ -19,9 +18,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.8);
         }
         .logo img {
             max-width: 200px;
@@ -33,6 +30,18 @@
         p {
             font-size: 1.2em;
             max-width: 600px;
+        }
+        .about-section, .mission-section {
+            max-width: 800px;
+            margin: 40px auto;
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #007BFF;
         }
         .contact-form {
             margin-top: 20px;
@@ -60,38 +69,42 @@
 <body>
     <div class="container">
         <div class="logo">
-            <img src="Datapip.jpg" alt="DatapipPD Logo">
-        <div class="about-section">
-    <h2>About Datapippd</h2>
-    <p>
-        <strong>Datapippd is the next evolution in structured data solutions.</strong> 
-        We help businesses <strong>ingest, transform, and manage their data efficiently</strong>, 
-        ensuring governance, automation, and seamless integration with existing systems. 
-    </p>
-    <p>
-        Our goal is to <strong>eliminate data silos</strong>, making structured, high-quality 
-        data accessible for <strong>analytics, automation, and operational intelligence.</strong>
-    </p>
-    <ul>
-        <li>Designed for Enterprises & Startups</li>
-        <li>Seamless API & BI Integration</li>
-        <li>Future-proof Data Structuring</li>
-    </ul>
-</div>
-
-<div class="mission-section">
-    <h2>Our Mission</h2>
-    <p>
-        <strong>“To empower businesses with structured, actionable data—eliminating inefficiencies and 
-        unlocking innovation through intelligent automation.”</strong>
-    </p>
-    <p>
-        We believe that <strong>data should work for you, not against you.</strong> 
-        DatapipPD simplifies complex data challenges, ensuring every business has 
-        <strong>the right data, at the right time, in the right format.</strong>
-    </p>
-</div>
+            <img src="Datapip.png" alt="DatapipPD Logo">
+        </div>
+        <h1>Welcome to DatapipPD</h1>
+        <p>DatapipPD transforms raw data into structured, actionable insights with automation and flexibility at its core.</p>
         
+        <div class="about-section">
+            <h2>About DatapipPD</h2>
+            <p>
+                🚀 <strong>DatapipPD is the next evolution in structured data solutions.</strong> 
+                We help businesses <strong>ingest, transform, and manage their data efficiently</strong>, 
+                ensuring governance, automation, and seamless integration with existing systems. 
+            </p>
+            <p>
+                Our goal is to <strong>eliminate data silos</strong>, making structured, high-quality 
+                data accessible for <strong>analytics, automation, and operational intelligence.</strong>
+            </p>
+            <ul>
+                <li>🔹 Designed for Enterprises & Startups</li>
+                <li>🔹 Seamless API & BI Integration</li>
+                <li>🔹 Future-proof Data Structuring</li>
+            </ul>
+        </div>
+
+        <div class="mission-section">
+            <h2>Our Mission</h2>
+            <p>
+                📌 <strong>“To empower businesses with structured, actionable data—eliminating inefficiencies and 
+                unlocking innovation through intelligent automation.”</strong>
+            </p>
+            <p>
+                We believe that <strong>data should work for you, not against you.</strong> 
+                DatapipPD simplifies complex data challenges, ensuring every business has 
+                <strong>the right data, at the right time, in the right format.</strong>
+            </p>
+        </div>
+
         <div class="contact-form">
             <h2>Contact Us</h2>
             <form action="https://formspree.io/f/mgvaeznd" method="POST">
