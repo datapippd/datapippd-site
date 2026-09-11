@@ -1,20 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Meet the Chaos Coordinator behind DatapiPD">
-    <title>About the Chaos Coordinator - DataPip: Pedro Duarte</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="favicon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meet the Chaos Coordinator behind DatapiPD">
+  <title>About the Chaos Coordinator — Datapippd</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
-<section id="about-me">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="index.html">Data<span>pip</span>pd</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about-us.html">About Us</a>
+        <a href="about-me.html" aria-current="page">About the Chaos Coordinator</a>
+        <a class="nav-cta" href="index.html#contact">Request a demo</a>
+      </nav>
+    </div>
+  </header>
+<main id="main" class="wrap">
+  <section class="page-hero">
+    <p class="eyebrow">Chaos Coordinator</p>
     <h1>Meet the Chaos Coordinator - DataPip: Pedro Duarte</h1>
-    <img src="datapippedro.png" alt="Chaos Coordinator" class="profile-image">
-    <p>As the Chaos Coordinator, I bring over a decade of experience in leading data-driven transformations and managing global operations. With a strong background in developing scalable data platforms, implementing automation solutions, and fostering continuous improvement, I guide DataPipPD’s vision. My expertise spans cloud computing, data analytics, and process optimization, ensuring chaos is turned into order for our clients’ success. Available for worldwide collaboration and passionate about team building.</p>
-    <a href="index.html" class="cta-button">Back to Home</a>
-</section>
+    <img class="profile" src="datapippedro.png" alt="Chaos Coordinator">
+    <p class="lead">As the Chaos Coordinator, I bring over a decade of experience in leading data-driven transformations and managing global operations. With a strong background in developing scalable data platforms, implementing automation solutions, and fostering continuous improvement, I guide DataPipPD’s vision. My expertise spans cloud computing, data analytics, and process optimization, ensuring chaos is turned into order for our clients’ success. Available for worldwide collaboration and passionate about team building.</p>
+    <p style="margin-top:1.5rem"><a class="btn btn-primary" href="index.html">Back to Home</a></p>
+  </section>
+</main>
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p style="margin:0">© Datapippd · contact@datapippd.com</p>
+      <p style="margin:0"><a href="datapippd-whitepaper.pdf">White paper</a></p>
+    </div>
+  </footer>
+  <script>
+    (function(){
+      var h=document.getElementById('site-header');
+      var b=document.querySelector('[data-nav-toggle]');
+      if(!h||!b) return;
+      b.addEventListener('click', function(){
+        var open=h.classList.toggle('is-open');
+        b.setAttribute('aria-expanded', open?'true':'false');
+      });
+    })();
+  </script>
 </body>
 </html>
