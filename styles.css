@@ -297,3 +297,26 @@ textarea { min-height: 8rem; resize: vertical; }
 @media (prefers-reduced-motion: reduce) {
   .pipe-line::before, .hero-visual::before, .flow-step { animation: none; }
 }
+
+/* tangled → oriented pipe story */
+.pipe-story { position: relative; z-index: 1; }
+.pipe-svg { width: 100%; height: auto; display: block; }
+.pipe-svg .pipe {
+  fill: none;
+  stroke-linejoin: round;
+  opacity: 0.92;
+}
+.pipe-caption {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 0.5rem; margin-top: 0.45rem;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--muted);
+}
+.pipe-caption__arrow {
+  flex: 1; height: 1px;
+  background: linear-gradient(90deg, rgba(26,115,232,0.15), rgba(45,212,191,0.55));
+  margin: 0 0.5rem;
+}
+@media (prefers-reduced-motion: reduce) {
+  .pipe-svg .dot { display: none; }
+}
