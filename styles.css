@@ -264,3 +264,36 @@ textarea { min-height: 8rem; resize: vertical; }
   .brand { font-size: 1rem; }
   .hero-actions .btn { min-width: 100%; }
 }
+
+/* hero data pipes motif */
+.hero-visual { display: grid; gap: 0.85rem; }
+.data-pipes {
+  position: relative; z-index: 1;
+  display: grid; gap: 0.45rem;
+  padding: 0.35rem 0.15rem 0.15rem;
+}
+.pipe-line {
+  position: relative;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(26,115,232,0.12);
+  overflow: hidden;
+}
+.pipe-line::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(26,115,232,0.55), rgba(45,212,191,0.75), transparent);
+  width: 42%;
+  animation: pipeflow 2.8s ease-in-out infinite;
+}
+.pipe-line:nth-child(2)::before { animation-delay: 0.45s; width: 36%; }
+.pipe-line:nth-child(3)::before { animation-delay: 0.9s; width: 48%; }
+.pipe-line:nth-child(4)::before { animation-delay: 1.25s; width: 40%; }
+@keyframes pipeflow {
+  0% { transform: translateX(-120%); }
+  100% { transform: translateX(280%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pipe-line::before, .hero-visual::before, .flow-step { animation: none; }
+}
