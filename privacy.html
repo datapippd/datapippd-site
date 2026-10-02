@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy | Datapippd</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="index.html">Data<span>Pip</span>PD</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about-us.html">About Us</a>
+        <a class="nav-cta" href="index.html#contact">Start with a Review</a>
+      </nav>
+    </div>
+  </header>
+<main id="main" class="wrap">
+  <section class="page-hero">
+    <p class="eyebrow">Privacy</p>
+    <h1>Privacy notice</h1>
+    <p>Who we are. Datapippd, Warsaw, Poland, is the controller of the personal data you send us. Contact: pedro.duarte@datapippd.com.</p>
+    <p>What we collect. The name, email address and message you send through the contact form or by email.</p>
+    <p>Why. To reply to you and, if you ask, to prepare a Review. The legal basis is taking steps at your request before a contract, and our legitimate interest in answering enquiries.</p>
+    <p>Who processes it. Formspree receives form submissions and forwards them to us by email. Vercel hosts this site and keeps standard server logs. Both act on our behalf under their data processing terms and may process data outside the European Economic Area under the safeguards in those terms.</p>
+    <p>How long. We keep enquiries for 24 months after our last contact, unless a contract follows.</p>
+    <p>Your rights. You may ask for access, correction, deletion, restriction or a copy of your data, and you may object to its use. Write to the address above. You may also complain to the Polish supervisory authority, the President of the Personal Data Protection Office (UODO).</p>
+    <p>Cookies. This site sets no tracking or advertising cookies.</p>
+    <p>Last updated October 2026.</p>
+  </section>
+</main>
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p style="margin:0">© Datapippd · pedro.duarte@datapippd.com</p>
+      <p style="margin:0"><a href="datapippd-method.pdf">Method paper</a></p>
+    </div>
+  </footer>
+  <script>
+    (function(){
+      var h=document.getElementById('site-header');
+      var b=document.querySelector('[data-nav-toggle]');
+      if(!h||!b) return;
+      b.addEventListener('click', function(){
+        var open=h.classList.toggle('is-open');
+        b.setAttribute('aria-expanded', open?'true':'false');
+      });
+    })();
+  </script>
+</body>
+</html>
