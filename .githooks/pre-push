@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Before every push: the secret scan on the pushed range, so commits that never ran pre-commit
+# (cherry-pick, revert, rebase) are checked too. gitleaks in CI is the authority.
+# Git gives one line per pushed ref: <local ref> <local sha> <remote ref> <remote sha>.
+set -u
+unset GIT_DIR GIT_WORK_TREE GIT_INDEX_FILE
+command -v make >/dev/null 2>&1 || { echo "pre-push: make not found, secret scan cannot run" >&2; exit 1; }
+top=$(git rev-parse --show-toplevel) || exit 1
+while read -r lref lsha rref rsha; do
+  case $lsha in *[!0]*) ;; *) continue;; esac   # a deletion pushes no content
+  if git cat-file -e "$rsha^{commit}" 2>/dev/null; then range="$rsha..$lsha"
+  else range="$lsha --not --remotes"; fi
+  make -s -C "$top" secrets SCAN_RANGE="$range" </dev/null || { echo "pre-push: refused $lref" >&2; exit 1; }
+done
+exit 0

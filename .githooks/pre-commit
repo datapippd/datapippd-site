@@ -1,0 +1,4 @@
+#!/bin/sh
+# Before every commit: the secret scan on the working tree and the staged content. gitleaks in CI is the authority.
+command -v make >/dev/null 2>&1 || { echo "pre-commit: make not found, secret scan cannot run" >&2; exit 1; }
+exec make -s secrets
